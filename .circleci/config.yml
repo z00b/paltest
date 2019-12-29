@@ -41,9 +41,13 @@ workflows:
       - domore:
           requires:
             - dostuff
+          filters:
+            tags:
+              only:
+                - test
       - deploy:
           requires:
-            - domore
+            - dostuff
           filters:
             branches:
               only:
