@@ -41,6 +41,9 @@ workflows:
       - domore:
           requires:
             - dostuff
+      - wait:
+          type: approval
+          requires: domore
       - docoda:
           requires:
-            - domore
+            - wait
