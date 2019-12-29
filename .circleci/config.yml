@@ -38,6 +38,10 @@ workflows:
   build:
     jobs:
       - dostuff
+          filters:
+            tags:
+              only:
+                - test
       - domore:
           requires:
             - dostuff
