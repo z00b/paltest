@@ -43,7 +43,7 @@ workflows:
             - dostuff
       - deploy:
           requires:
-            - wait
+            - domore
           filters:
             branches:
               only:
