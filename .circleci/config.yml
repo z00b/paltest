@@ -39,6 +39,8 @@ workflows:
     jobs:
       - dostuff
       - domore:
-          requires: dostuff
+          requires:
+            - dostuff
       - docoda:
-          requires: domore
+          requires:
+            - domore
