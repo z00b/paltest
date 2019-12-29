@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  dostuff:
     docker:
       - image: debian:stretch
 
@@ -9,14 +9,24 @@ jobs:
 
       - run:
           name: Greeting
-          commnd: echo Hello, world.
+          command: echo Hello, world.
 
       - run:
           name: Print the Current Time
           command: date
 
+  domore:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - run:
+          name: More things
+          command: "false"
+
 workflows:
   version: 2
   build:
     jobs:
-      - build
+      - dostuff
+      - domore
