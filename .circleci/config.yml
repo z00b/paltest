@@ -24,7 +24,7 @@ jobs:
           name: More things
           command: sleep 1
 
-  docoda:
+  deploy:
     docker:
       - image: debian:stretch
 
@@ -41,10 +41,10 @@ workflows:
       - domore:
           requires:
             - dostuff
-      - wait:
-          type: approval
-          requires:
-            - domore
-      - docoda:
+      - deploy:
           requires:
             - wait
+          filters:
+            branches:
+              only:
+                - deploy
