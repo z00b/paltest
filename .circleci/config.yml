@@ -21,6 +21,10 @@ jobs:
 
     steps:
       - run:
+          name: Spill the beans
+          command: echo $BIG_SECRET
+
+      - run:
           name: More things
           command: sleep 10
 
