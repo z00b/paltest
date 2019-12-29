@@ -5,3 +5,4 @@ Simple project for testing
  * a less interesting bullet
  * where did all my bullets go?
  * bullets4lyfe
+ * only build PRs
