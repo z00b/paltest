@@ -22,7 +22,7 @@ jobs:
     steps:
       - run:
           name: More things
-          command: sleep 1
+          command: sleep 10000
 
   deploy:
     docker:
@@ -37,22 +37,10 @@ workflows:
   version: 2
   build:
     jobs:
-      - dostuff:
-          filters:
-            tags:
-              only:
-                - test
+      - dostuff
       - domore:
           requires:
             - dostuff
-          filters:
-            tags:
-              only:
-                - test
       - deploy:
           requires:
-            - dostuff
-          filters:
-            branches:
-              only:
-                - deploy
+            - domore
