@@ -48,3 +48,11 @@ workflows:
       - deploy:
           requires:
             - domore
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 1 * * *"
+          filters:
+            branches:
+              only:
+                - master
