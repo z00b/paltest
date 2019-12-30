@@ -49,6 +49,8 @@ workflows:
           requires:
             - domore
   nightly:
+    jobs:
+      - dostuff
     triggers:
       - schedule:
           cron: "0 1 * * *"
